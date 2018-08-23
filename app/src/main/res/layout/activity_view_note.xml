@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.marvinklar.uwunote.MainActivity">
+    tools:context="de.marvinklar.uwunote.ViewNoteActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,17 +20,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include
-        layout="@layout/content_main"
-        app:layout_anchor="@+id/newNoteButton"
-        app:layout_anchorGravity="left|center" />
+    <include layout="@layout/content_view_note" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/newNoteButton"
+        android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_save" />
 
 </android.support.design.widget.CoordinatorLayout>
