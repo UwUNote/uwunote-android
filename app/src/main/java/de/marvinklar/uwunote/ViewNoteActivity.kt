@@ -1,8 +1,11 @@
 package de.marvinklar.uwunote
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.TextView
 
@@ -46,5 +49,29 @@ class ViewNoteActivity : AppCompatActivity() {
                 Snackbar.make(view, getText(R.string.saved), Snackbar.LENGTH_LONG).show()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_note, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.delete -> deleteNote()
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun deleteNote(): Boolean {
+        val uid = intent.getStringExtra("uid")
+
+        if (uid != null) {
+            val note = Note(applicationContext, uid)
+            note.delete()
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            applicationContext.startActivity(intent)
+        }
+        return true
     }
 }

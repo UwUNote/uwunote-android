@@ -22,10 +22,20 @@ class MainActivity : AppCompatActivity() {
         val newNoteButton = findViewById<View>(R.id.newNoteButton) as FloatingActionButton
         newNoteButton.setOnClickListener { _ -> startActivity(Intent(baseContext, ViewNoteActivity::class.java)) }
 
+        loadNotes()
+    }
+
+    private fun loadNotes() {
         val notesRecycler = findViewById<View>(R.id.notes) as RecyclerView
         notesRecycler.layoutManager = LinearLayoutManager(applicationContext)
         notesRecycler.itemAnimator = DefaultItemAnimator()
         notesRecycler.adapter = NotesAdapter(applicationContext)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        loadNotes()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
