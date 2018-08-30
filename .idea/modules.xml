@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UwUNote.iml" filepath="$PROJECT_DIR$/UwUNote.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uwunote-android.iml" filepath="$PROJECT_DIR$/uwunote-android.iml" />
     </modules>
   </component>
 </project>
