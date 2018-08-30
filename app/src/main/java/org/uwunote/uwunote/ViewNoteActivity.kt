@@ -1,4 +1,4 @@
-package de.marvinklar.uwunote
+package org.uwunote.uwunote
 
 import android.content.Intent
 import android.os.Bundle

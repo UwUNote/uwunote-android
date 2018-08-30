@@ -1,4 +1,4 @@
-package de.marvinklar.uwunote
+package org.uwunote.uwunote
 
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 
 import android.content.Intent
+import org.uwunote.uwunote.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
