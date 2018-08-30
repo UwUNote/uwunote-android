@@ -20,6 +20,7 @@ class ViewNoteActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_view_note)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         noteEditor = findViewById(R.id.NoteText)
 
