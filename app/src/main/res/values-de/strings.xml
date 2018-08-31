@@ -1,0 +1,14 @@
+<resources>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="you_sure_question">Bist du dir sicher?</string>
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="type_here">Tippe hier…</string>
+    <string name="saved">Gespeichert!</string>
+    <string name="error">Fehler: </string>
+
+    <string name="delete">Löschen</string>
+    <string name="delete_note_security_question_title">Notiz löschen</string>
+    <string name="deleted">Gelöscht!</string>
+</resources>

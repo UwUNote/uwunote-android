@@ -1,8 +1,10 @@
 package org.uwunote.uwunote
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -59,12 +61,24 @@ class ViewNoteActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.delete -> deleteNote()
+            R.id.delete ->  {
+                AlertDialog.Builder(this)
+                        .setTitle(R.string.delete_note_security_question_title)
+                        .setMessage(R.string.you_sure_question)
+                        .setPositiveButton(R.string.yes) { _, _ ->
+                            deleteNote()
+                        }
+                        .setNegativeButton(R.string.no) {_, _ ->
+                            //Do nothing
+                        }
+                        .show()
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun deleteNote(): Boolean {
+    private fun deleteNote() {
         val uid = intent.getStringExtra("uid")
 
         if (uid != null) {
@@ -73,6 +87,5 @@ class ViewNoteActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, MainActivity::class.java)
             applicationContext.startActivity(intent)
         }
-        return true
     }
 }
