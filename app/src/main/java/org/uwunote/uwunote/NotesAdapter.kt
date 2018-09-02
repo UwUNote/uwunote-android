@@ -48,7 +48,7 @@ class NotesAdapter(private val context: Context) : RecyclerView.Adapter<NotesAda
     private fun getAllNotes(): ArrayList<Note> {
         val notes: ArrayList<Note> = ArrayList()
         var note: Note?
-        for(file: File in context.filesDir.listFiles()) {
+        for(file: File in File(context.filesDir.absolutePath + File.separator + noteFolder).listFiles()) {
             note = Note(context, file.name)
             note.load()
             notes.add(note)

@@ -12,7 +12,9 @@ import android.view.MenuItem
 import android.view.View
 
 import android.content.Intent
-import org.uwunote.uwunote.R
+import java.io.File
+import java.nio.file.Files
+import java.nio.file.Paths
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val newNoteButton = findViewById<View>(R.id.newNoteButton) as FloatingActionButton
         newNoteButton.setOnClickListener { _ -> startActivity(Intent(baseContext, ViewNoteActivity::class.java)) }
+
+        File(applicationContext.filesDir.absolutePath + File.separator + noteFolder).mkdir()
 
         loadNotes()
     }
@@ -40,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
+        //menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 

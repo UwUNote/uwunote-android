@@ -11,4 +11,6 @@
     <string name="delete">Löschen</string>
     <string name="delete_note_security_question_title">Notiz löschen</string>
     <string name="deleted">Gelöscht!</string>
+    <string name="discarded_empty_note">Leere Notiz verworfen!</string>
+    <string name="note_not_saved">Notiz ist nicht gespeichert!</string>
 </resources>

@@ -13,4 +13,6 @@
     <string name="delete">Delete</string>
     <string name="delete_note_security_question_title">Delete note</string>
     <string name="deleted">Deleted!</string>
+    <string name="discarded_empty_note">Discarded empty note!</string>
+    <string name="note_not_saved">Note is not saved!</string>
 </resources>
